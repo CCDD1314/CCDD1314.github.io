@@ -6,14 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>温兴来的博客</title>
     <style>
-        /* 全局样式重置 */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Microsoft YaHei', sans-serif;
-        }
-
         body {
             background: linear-gradient(135deg, #87CEFA, #1E90FF); /* 蓝色渐变背景 */
             color: #333;
@@ -22,194 +14,62 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            justify-content: center;
             padding: 20px;
+            font-family: Arial, sans-serif;
         }
 
-        /* 博客页面样式 */
+       .welcome-page {
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 50px;
+            border-radius: 10px;
+        }
+
        .blog-page {
+            display: none;
+            text-align: center;
             width: 100%;
             max-width: 800px;
-            display: flex;
-            flex-direction: column;
-            flex: 1;
         }
 
-        /* 博客头部样式 */
-       .blog-header {
-            position: sticky;
-            top: 0;
-            width: 100%;
-            background-color: white;
-            padding: 10px 0;
-            z-index: 100;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            text-align: center;
-        }
-
-        /* 博客时间样式 */
-       .blog-time {
-            font-size: 24px;
-            font-weight: bold;
-        }
-
-        /* 博客容器样式 */
-       .blog-container {
-            margin-top: 20px;
-            background-color: #fff;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            flex: 1;
-            width: 100%;
-        }
-
-        /* 博客标题样式 */
-       .blog-title {
-            text-align: center;
-            margin-bottom: 20px;
-            color: #0078D7;
-            font-size: 28px;
-        }
-
-        /* 欢迎信息样式 */
-       .welcome-message {
-            text-align: center;
-            margin-bottom: 30px;
-            padding: 20px;
-            background-color: #f8f8f8;
-            border-radius: 5px;
-        }
-
-        /* 文章样式 */
-       .post {
-            margin-bottom: 30px;
-        }
-
-        /* 文章标题样式 */
-       .post-title {
-            font-size: 24px;
-            margin-bottom: 10px;
-            color: #0078D7;
-        }
-
-        /* 文章内容样式 */
-       .post-content {
-            margin-bottom: 20px;
-        }
-
-        /* 文章时间样式 */
-       .post-time {
-            text-align: right;
-            color: #666;
-            font-size: 14px;
-        }
-
-        /* 底部按钮容器样式 */
-       .button-container {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            padding: 20px 0;
-        }
-
-        /* 共享资源按钮样式 */
-       .share-button {
-            background-color: #FFD700;
-            color: #000;
+        button {
+            background-color: #1E90FF;
+            color: white;
             border: none;
-            padding: 10px 20px;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
             font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
             border-radius: 5px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-        }
-
-       .share-button:hover {
-            background-color: #FFC000;
-            transform: scale(1.05);
-        }
-
-        /* 联系我按钮样式 */
-       .contact-button {
-            background-color: #FFD700;
-            color: #000;
-            border: none;
-            padding: 10px 20px;
-            font-size: 16px;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-        }
-
-       .contact-button:hover {
-            background-color: #FFC000;
-            transform: scale(1.05);
-        }
-
-        /* 弹窗样式 */
-       .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
-        }
-
-       .modal-content {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 5px;
-            max-width: 400px;
-            width: 80%;
-            text-align: center;
-        }
-
-       .modal-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 15px;
-        }
-
-       .modal-close {
-            background: none;
-            border: none;
-            font-size: 20px;
-            cursor: pointer;
-        }
-
-       .modal-body {
-            margin-bottom: 20px;
-        }
-
-       .modal-footer {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-        }
-
-       .modal-button {
-            background-color: #FFD700;
-            color: #000;
-            border: none;
-            padding: 8px 15px;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-       .modal-button:hover {
-            background-color: #FFC000;
         }
     </style>
 </head>
 
 <body>
-    <div class="blog-page
+    <div class="welcome-page">
+        <h1>Hello，欢迎进入温兴来的博客</h1>
+        <button id="enterButton">进入</button>
+    </div>
+    <div class="blog-page">
+        <h1>温兴来的博客</h1>
+        <p>Top1:大家好！欢迎来到我的博客，本人2012年出生，这是我人生中第一次自己动手用代码开发网站，很激动，成功后也很开心。我的博客永远为大家开放，为大家提供一手精品工具感谢参观</p >
+    </div><ul>
+  <li> <a href="https://v.kuaishou.com/2vubCZq ">我的抖音</a> </li>
+    <script>  <li> <a href="https://xygzs225.lanzouo.com/b00ya7kw0f">资料密码90ba</a> </li>
+        
+        document.addEventListener('DOMContentLoaded', function () {
+            const enterButton = document.getElementById('enterButton');
+            const blogPage = document.querySelector('.blog-page');
+            enterButton.addEventListener('click', function () {
+                document.querySelector('.welcome-page').style.display = 'none';
+                blogPage.style.display = 'block';
+            });
+        });
+    </script>
+</body>
+
+</html>
