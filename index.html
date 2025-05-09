@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>温兴来的博客</title>
     <style>
+        /* 全局样式重置 */
         * {
             margin: 0;
             padding: 0;
@@ -17,58 +18,61 @@
             background: linear-gradient(135deg, #87CEFA, #1E90FF); /* 蓝色渐变背景 */
             color: #333;
             line-height: 1.6;
-            padding: 20px;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
+            align-items: center;
+            padding: 20px;
         }
 
         /* 博客页面样式 */
-        .blog-page {
+       .blog-page {
+            width: 100%;
+            max-width: 800px;
             display: flex;
             flex-direction: column;
             flex: 1;
         }
 
-        .blog-header {
-            position: fixed;
+        /* 博客头部样式 */
+       .blog-header {
+            position: sticky;
             top: 0;
-            left: 0;
             width: 100%;
             background-color: white;
             padding: 10px 0;
             z-index: 100;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             text-align: center;
-            width: 100%;
-            max-width: 800px;
-            margin: 0 auto;
         }
 
-        .blog-time {
+        /* 博客时间样式 */
+       .blog-time {
             font-size: 24px;
             font-weight: bold;
         }
 
-        .blog-container {
-            margin-top: 70px; /* 留出头部空间 */
+        /* 博客容器样式 */
+       .blog-container {
+            margin-top: 20px;
             background-color: #fff;
             padding: 30px;
             border-radius: 10px;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
             flex: 1;
-            max-width: 800px;
-            margin: 70px auto 20px;
+            width: 100%;
         }
 
-        .blog-title {
+        /* 博客标题样式 */
+       .blog-title {
             text-align: center;
             margin-bottom: 20px;
             color: #0078D7;
             font-size: 28px;
         }
 
-        .welcome-message {
+        /* 欢迎信息样式 */
+       .welcome-message {
             text-align: center;
             margin-bottom: 30px;
             padding: 20px;
@@ -76,36 +80,40 @@
             border-radius: 5px;
         }
 
-        .post {
+        /* 文章样式 */
+       .post {
             margin-bottom: 30px;
         }
 
-        .post-title {
+        /* 文章标题样式 */
+       .post-title {
             font-size: 24px;
             margin-bottom: 10px;
             color: #0078D7;
         }
 
-        .post-content {
+        /* 文章内容样式 */
+       .post-content {
             margin-bottom: 20px;
         }
 
-        .post-time {
+        /* 文章时间样式 */
+       .post-time {
             text-align: right;
             color: #666;
             font-size: 14px;
         }
 
-        /* 底部按钮容器 */
-        .button-container {
+        /* 底部按钮容器样式 */
+       .button-container {
             display: flex;
             justify-content: center;
             gap: 20px;
             padding: 20px 0;
         }
 
-        /* 共享资源按钮 */
-        .share-button {
+        /* 共享资源按钮样式 */
+       .share-button {
             background-color: #FFD700;
             color: #000;
             border: none;
@@ -117,13 +125,13 @@
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
         }
 
-        .share-button:hover {
+       .share-button:hover {
             background-color: #FFC000;
             transform: scale(1.05);
         }
 
-        /* 联系我按钮 */
-        .contact-button {
+        /* 联系我按钮样式 */
+       .contact-button {
             background-color: #FFD700;
             color: #000;
             border: none;
@@ -135,13 +143,13 @@
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
         }
 
-        .contact-button:hover {
+       .contact-button:hover {
             background-color: #FFC000;
             transform: scale(1.05);
         }
 
         /* 弹窗样式 */
-        .modal {
+       .modal {
             display: none;
             position: fixed;
             top: 0;
@@ -154,7 +162,7 @@
             z-index: 1000;
         }
 
-        .modal-content {
+       .modal-content {
             background-color: #fff;
             padding: 20px;
             border-radius: 5px;
@@ -163,31 +171,31 @@
             text-align: center;
         }
 
-        .modal-header {
+       .modal-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
             margin-bottom: 15px;
         }
 
-        .modal-close {
+       .modal-close {
             background: none;
             border: none;
             font-size: 20px;
             cursor: pointer;
         }
 
-        .modal-body {
+       .modal-body {
             margin-bottom: 20px;
         }
 
-        .modal-footer {
+       .modal-footer {
             display: flex;
             justify-content: center;
             gap: 10px;
         }
 
-        .modal-button {
+       .modal-button {
             background-color: #FFD700;
             color: #000;
             border: none;
@@ -197,14 +205,11 @@
             transition: all 0.3s ease;
         }
 
-        .modal-button:hover {
+       .modal-button:hover {
             background-color: #FFC000;
         }
     </style>
 </head>
 
 <body>
-    <div class="blog-page">
-        <div class="blog-header">
-            <span class="blog-time" id="current-time">加载时间中...</span>
-        </div>
+    <div class="blog-page
