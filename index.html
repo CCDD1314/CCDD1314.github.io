@@ -4,72 +4,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>温兴来的博客</title>
+    <title>小温的博客</title>
     <style>
         body {
-            background: linear-gradient(135deg, #87CEFA, #1E90FF); /* 蓝色渐变背景 */
-            color: #333;
-            line-height: 1.6;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
             font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9; /* 页面背景为淡灰色 */
+            color: #333;
         }
 
-       .welcome-page {
+        header {
+            background-color: #add8e6; /* 浅蓝色背景 */
             text-align: center;
-            background-color: rgba(255, 255, 255, 0.8);
-            padding: 50px;
-            border-radius: 10px;
+            padding: 20px 0;
         }
 
-       .blog-page {
-            display: none;
-            text-align: center;
-            width: 100%;
-            max-width: 800px;
+        header h1 {
+            margin: 0;
+            font-size: 24px; /* 标题字体大小 */
         }
 
-        button {
-            background-color: #1E90FF;
-            color: white;
+        .container {
+            width: 800px;
+            max-width: 90%;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .article p {
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        .article hr {
             border: none;
-            padding: 15px 32px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            margin: 4px 2px;
-            cursor: pointer;
-            border-radius: 5px;
+            border-top: 1px solid #ddd;
         }
     </style>
 </head>
 
 <body>
-    <div class="welcome-page">
-        <h1>Hello，欢迎进入温兴来的博客</h1>
-        <button id="enterButton">进入</button>
+    <header>
+        <h1>小温的博客</h1>
+    </header>
+    <div class="container">
+        <div class="article">
+            <p>
+                大家好！欢迎来到我的博客，本人2012年出生，这是我人生中第一次自己动手用代码开发网站，很激动，成功后也很开心。我的博客永远为大家开放，为大家提供一手精品工具，感谢参观。
+            </p>
+            <hr>
+        </div>
     </div>
-    <div class="blog-page">
-        <h1>温兴来的博客</h1>
-        <p>Top1:大家好！欢迎来到我的博客，本人2012年出生，这是我人生中第一次自己动手用代码开发网站，很激动，成功后也很开心。我的博客永远为大家开放，为大家提供一手精品工具感谢参观</p >
-    </div><ul>
-  <li> <a href="https://v.kuaishou.com/2vubCZq ">我的抖音</a> </li>
-    <script>  <li> <a href="https://xygzs225.lanzouo.com/b00ya7kw0f">资料密码90ba</a> </li>
-        
-        document.addEventListener('DOMContentLoaded', function () {
-            const enterButton = document.getElementById('enterButton');
-            const blogPage = document.querySelector('.blog-page');
-            enterButton.addEventListener('click', function () {
-                document.querySelector('.welcome-page').style.display = 'none';
-                blogPage.style.display = 'block';
-            });
-        });
-    </script>
 </body>
 
 </html>
